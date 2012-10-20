@@ -1,0 +1,6 @@
+AR tx behavioral //fs-caedm/clkrbj/Documents/320/Lab8/Lab8/tx.vhd sub00/vhpl03 1350601289
+AR tx_top behavioral //fs-caedm/clkrbj/Documents/320/Lab8/Lab8/tx_top.vhd sub00/vhpl05 1350601291
+AR seven_segment_display behavioral //fs-caedm/clkrbj/Documents/320/Lab8/Lab8/seven_segment_display.vhd sub00/vhpl01 1350601287
+EN tx NULL //fs-caedm/clkrbj/Documents/320/Lab8/Lab8/tx.vhd sub00/vhpl02 1350601288
+EN seven_segment_display NULL //fs-caedm/clkrbj/Documents/320/Lab8/Lab8/seven_segment_display.vhd sub00/vhpl00 1350601286
+EN tx_top NULL //fs-caedm/clkrbj/Documents/320/Lab8/Lab8/tx_top.vhd sub00/vhpl04 1350601290

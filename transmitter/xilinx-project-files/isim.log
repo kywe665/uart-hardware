@@ -1,0 +1,30 @@
+ISim log file
+Running: J:\Documents\320\Lab8\Lab8\tx_testbench_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb J:/Documents/320/Lab8/Lab8/tx_testbench_isim_beh.wdb 
+ISim P.15xf (signature 0xc3576ebc)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 6000ns
+# run 6000ns
+# run 6000ns
+# run 6000ns
+# run 6000ns
+# run 6000ns
+# run 6000ns
+# run 1ms
+# run 1ms
+Successfully transmitted the following byte:10101010 at time 1281078.328 ns
+Successfully transmitted the following byte:01101001 at time 1932119.99 ns
+# run 1ms
+Successfully transmitted the following byte:11111111 at time 2583161.652 ns
+# run 1ms
+Successfully transmitted the following byte:00000000 at time 3234203.314 ns
+# run 1ms
+# run 1ms
+# run 1ms
+Successfully transmitted the following byte:11110000
+--- Test Done ---:6072794.996 ns

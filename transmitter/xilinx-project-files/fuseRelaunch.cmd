@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "J:/Documents/320/Lab8/Lab8/tx_testbench_isim_beh.exe" -prj "J:/Documents/320/Lab8/Lab8/tx_testbench_beh.prj" "tx_testbench" 
