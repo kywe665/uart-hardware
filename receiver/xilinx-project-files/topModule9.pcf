@@ -1,0 +1,51 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Wed Oct 31 18:36:59 2012
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "an<0>" LOCATE = SITE "F17" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "H17" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "C18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "F15" LEVEL 1;
+COMP "dp" LOCATE = SITE "C17" LEVEL 1;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
+COMP "btn" LOCATE = SITE "B18" LEVEL 1;
+COMP "rx" LOCATE = SITE "U6" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "L18" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "F18" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "D17" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "D16" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "G14" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "J17" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "H14" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP clk = BEL "outOfReceiver1_0" BEL "outOfReceiver1_1" BEL
+        "outOfReceiver1_2" BEL "outOfReceiver1_3" BEL "outOfReceiver1_4" BEL
+        "outOfReceiver1_5" BEL "outOfReceiver1_6" BEL "outOfReceiver1_7" BEL
+        "outOfReceiver2_0" BEL "outOfReceiver2_1" BEL "outOfReceiver2_2" BEL
+        "outOfReceiver2_3" BEL "outOfReceiver2_4" BEL "outOfReceiver2_5" BEL
+        "outOfReceiver2_6" BEL "outOfReceiver2_7" BEL "sevenDisplay/r_reg_15"
+        BEL "sevenDisplay/r_reg_14" BEL "sevenDisplay/r_reg_13" BEL
+        "sevenDisplay/r_reg_12" BEL "sevenDisplay/r_reg_11" BEL
+        "sevenDisplay/r_reg_10" BEL "sevenDisplay/r_reg_9" BEL
+        "sevenDisplay/r_reg_8" BEL "sevenDisplay/r_reg_7" BEL
+        "sevenDisplay/r_reg_6" BEL "sevenDisplay/r_reg_5" BEL
+        "sevenDisplay/r_reg_4" BEL "sevenDisplay/r_reg_3" BEL
+        "sevenDisplay/r_reg_2" BEL "sevenDisplay/r_reg_1" BEL
+        "sevenDisplay/r_reg_0" BEL "receiver/state_reg_FSM_FFd4" BEL
+        "receiver/state_reg_FSM_FFd3" BEL "receiver/state_reg_FSM_FFd1" BEL
+        "receiver/tx_bit" BEL "receiver/half_bit" BEL "receiver/test_shift_7"
+        BEL "receiver/test_shift_6" BEL "receiver/test_shift_5" BEL
+        "receiver/test_shift_4" BEL "receiver/test_shift_3" BEL
+        "receiver/test_shift_2" BEL "receiver/test_shift_1" BEL
+        "receiver/test_shift_0" BEL "receiver/tx_timer_11" BEL
+        "receiver/tx_timer_10" BEL "receiver/tx_timer_9" BEL
+        "receiver/tx_timer_8" BEL "receiver/tx_timer_7" BEL
+        "receiver/tx_timer_6" BEL "receiver/tx_timer_5" BEL
+        "receiver/tx_timer_4" BEL "receiver/tx_timer_3" BEL
+        "receiver/tx_timer_2" BEL "receiver/tx_timer_1" BEL
+        "receiver/tx_timer_0" BEL "receiver/state_reg_FSM_FFd2" BEL
+        "Mshreg_rxInternal/SRL16E" BEL "rxInternal" BEL
+        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
+SCHEMATIC END;
+

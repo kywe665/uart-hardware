@@ -1,0 +1,538 @@
+Release 14.1 - xst P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.53 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.55 secs
+ 
+--> Reading design: topModule9.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "topModule9.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "topModule9"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : topModule9
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//fs-caedm/clkrbj/Documents/320/Lab9/Lab9/rx.vhd" in Library work.
+Architecture behavioral of Entity rx is up to date.
+Compiling vhdl file "//fs-caedm/clkrbj/Documents/320/Lab9/Lab9/seven_segment_display.vhd" in Library work.
+Architecture behavioral of Entity seven_segment_display is up to date.
+Compiling vhdl file "//fs-caedm/clkrbj/Documents/320/Lab9/Lab9/topModule9.vhd" in Library work.
+Architecture behavioral of Entity topmodule9 is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <topModule9> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <rx> in library <work> (architecture <Behavioral>) with generics.
+	BAUD_RATE = 19200
+	CLK_RATE = 50000000
+
+Analyzing hierarchy for entity <seven_segment_display> in library <work> (architecture <Behavioral>) with generics.
+	COUNTER_BITS = 16
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <topModule9> in library <work> (Architecture <behavioral>).
+Entity <topModule9> analyzed. Unit <topModule9> generated.
+
+Analyzing generic Entity <rx> in library <work> (Architecture <Behavioral>).
+	BAUD_RATE = 19200
+	CLK_RATE = 50000000
+WARNING:Xst:819 - "//fs-caedm/clkrbj/Documents/320/Lab9/Lab9/rx.vhd" line 139: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <test_shift>
+INFO:Xst:2679 - Register <current_shift> in unit <rx> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+Entity <rx> analyzed. Unit <rx> generated.
+
+Analyzing generic Entity <seven_segment_display> in library <work> (Architecture <Behavioral>).
+	COUNTER_BITS = 16
+Entity <seven_segment_display> analyzed. Unit <seven_segment_display> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <rx>.
+    Related source file is "//fs-caedm/clkrbj/Documents/320/Lab9/Lab9/rx.vhd".
+WARNING:Xst:646 - Signal <current_shift<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 13                                             |
+    | Transitions        | 26                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | power_up                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 8-bit latch for signal <data_out>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <strobe>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <load>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 8-bit register for signal <current_shift>.
+    Found 1-bit register for signal <half_bit>.
+    Found 8-bit register for signal <test_shift>.
+    Found 1-bit register for signal <tx_bit>.
+    Found 12-bit register for signal <tx_timer>.
+    Found 12-bit adder for signal <tx_timer$addsub0000> created at line 94.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  30 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <rx> synthesized.
+
+
+Synthesizing Unit <seven_segment_display>.
+    Related source file is "//fs-caedm/clkrbj/Documents/320/Lab9/Lab9/seven_segment_display.vhd".
+    Found 16x7-bit ROM for signal <seg>.
+    Found 4x1-bit ROM for signal <dp>.
+    Found 4-bit 4-to-1 multiplexer for signal <mux2>.
+    Found 16-bit up counter for signal <r_reg>.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   1 Counter(s).
+	inferred   4 Multiplexer(s).
+Unit <seven_segment_display> synthesized.
+
+
+Synthesizing Unit <topModule9>.
+    Related source file is "//fs-caedm/clkrbj/Documents/320/Lab9/Lab9/topModule9.vhd".
+WARNING:Xst:646 - Signal <rx_busy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <outOfReceiver1>.
+    Found 8-bit register for signal <outOfReceiver2>.
+    Found 1-bit register for signal <rxInternal>.
+    Found 1-bit register for signal <rxMid>.
+    Summary:
+	inferred  18 D-type flip-flop(s).
+Unit <topModule9> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 16x7-bit ROM                                          : 1
+ 4x1-bit ROM                                           : 1
+# Adders/Subtractors                                   : 1
+ 12-bit adder                                          : 1
+# Counters                                             : 1
+ 16-bit up counter                                     : 1
+# Registers                                            : 8
+ 1-bit register                                        : 4
+ 12-bit register                                       : 1
+ 8-bit register                                        : 3
+# Latches                                              : 3
+ 1-bit latch                                           : 2
+ 8-bit latch                                           : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <receiver/state_reg/FSM> on signal <state_reg[1:4]> with gray encoding.
+----------------------
+ State    | Encoding
+----------------------
+ power_up | 0000
+ strt     | 0011
+ idle     | 0001
+ half_way | 0010
+ b0       | 0110
+ b1       | 1010
+ b2       | 1110
+ b3       | 1111
+ b4       | 1101
+ b5       | 1100
+ b6       | 0100
+ b7       | 0101
+ stp      | 0111
+----------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 2
+ 16x7-bit ROM                                          : 1
+ 4x1-bit ROM                                           : 1
+# Adders/Subtractors                                   : 1
+ 12-bit adder                                          : 1
+# Counters                                             : 1
+ 16-bit up counter                                     : 1
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Latches                                              : 3
+ 1-bit latch                                           : 2
+ 8-bit latch                                           : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <topModule9> ...
+
+Optimizing unit <seven_segment_display> ...
+
+Optimizing unit <rx> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block topModule9, actual ratio is 1.
+
+Final Macro Processing ...
+
+Processing Unit <topModule9> :
+	Found 2-bit shift register for signal <rxInternal>.
+Unit <topModule9> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 58
+ Flip-Flops                                            : 58
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : topModule9.ngr
+Top Level Output File Name         : topModule9
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 178
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 26
+#      LUT2                        : 16
+#      LUT2_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 35
+#      LUT3_D                      : 1
+#      LUT4                        : 24
+#      LUT4_D                      : 4
+#      LUT4_L                      : 4
+#      MUXCY                       : 26
+#      MUXF5                       : 8
+#      VCC                         : 1
+#      XORCY                       : 28
+# FlipFlops/Latches                : 69
+#      FD                          : 17
+#      FDC                         : 14
+#      FDCE                        : 3
+#      FDE                         : 16
+#      FDP                         : 1
+#      FDRE                        : 8
+#      LD                          : 2
+#      LDE                         : 8
+# Shift Registers                  : 1
+#      SRL16                       : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 2
+#      OBUF                        : 12
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       62  out of   4656     1%  
+ Number of Slice Flip Flops:             69  out of   9312     0%  
+ Number of 4 input LUTs:                115  out of   9312     1%  
+    Number used as logic:               114
+    Number used as Shift registers:       1
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    232     6%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------+-----------------------------+-------+
+Clock Signal                                                 | Clock buffer(FF name)       | Load  |
+-------------------------------------------------------------+-----------------------------+-------+
+clk                                                          | BUFGP                       | 60    |
+receiver/state_reg_cmp_eq0000(receiver/state_reg_FSM_Out01:O)| NONE(*)(receiver/data_out_7)| 8     |
+receiver/strobe_not0001(receiver/strobe_not0001:O)           | NONE(*)(receiver/strobe)    | 1     |
+receiver/load_not0001(receiver/load_not000138:O)             | NONE(*)(receiver/load)      | 1     |
+-------------------------------------------------------------+-----------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+btn                                | IBUF                   | 18    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.421ns (Maximum Frequency: 155.739MHz)
+   Minimum input arrival time before clock: 2.059ns
+   Maximum output required time after clock: 8.053ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.421ns (frequency: 155.739MHz)
+  Total number of paths / destination ports: 697 / 70
+-------------------------------------------------------------------------
+Delay:               6.421ns (Levels of Logic = 4)
+  Source:            receiver/tx_timer_9 (FF)
+  Destination:       receiver/tx_timer_11 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: receiver/tx_timer_9 to receiver/tx_timer_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.591   0.808  receiver/tx_timer_9 (receiver/tx_timer_9)
+     LUT3:I0->O            1   0.704   0.455  receiver/tx_timer_mux0003<10>367 (receiver/tx_timer_mux0003<10>367)
+     LUT3:I2->O            2   0.704   0.482  receiver/tx_timer_mux0003<10>379 (receiver/tx_timer_mux0003<10>379)
+     LUT4_D:I2->O         10   0.704   0.961  receiver/tx_timer_mux0003<10>3106 (receiver/N5)
+     LUT2:I1->O            1   0.704   0.000  receiver/tx_timer_mux0003<6>1 (receiver/tx_timer_mux0003<6>)
+     FDC:D                     0.308          receiver/tx_timer_5
+    ----------------------------------------
+    Total                      6.421ns (3.715ns logic, 2.706ns route)
+                                       (57.9% logic, 42.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'receiver/state_reg_cmp_eq0000'
+  Clock period: 2.214ns (frequency: 451.671MHz)
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               2.214ns (Levels of Logic = 1)
+  Source:            receiver/data_out_7 (LATCH)
+  Destination:       receiver/data_out_7 (LATCH)
+  Source Clock:      receiver/state_reg_cmp_eq0000 falling
+  Destination Clock: receiver/state_reg_cmp_eq0000 falling
+
+  Data Path: receiver/data_out_7 to receiver/data_out_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              2   0.676   0.526  receiver/data_out_7 (receiver/data_out_7)
+     LUT3:I1->O            1   0.704   0.000  receiver/data_out_mux0001<7>1 (receiver/data_out_mux0001<7>)
+     LDE:D                     0.308          receiver/data_out_7
+    ----------------------------------------
+    Total                      2.214ns (1.688ns logic, 0.526ns route)
+                                       (76.2% logic, 23.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.059ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       Mshreg_rxInternal (FF)
+  Destination Clock: clk rising
+
+  Data Path: rx to Mshreg_rxInternal
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  rx_IBUF (rx_IBUF)
+     SRL16:D                   0.421          Mshreg_rxInternal
+    ----------------------------------------
+    Total                      2.059ns (1.639ns logic, 0.420ns route)
+                                       (79.6% logic, 20.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 206 / 12
+-------------------------------------------------------------------------
+Offset:              8.053ns (Levels of Logic = 4)
+  Source:            sevenDisplay/r_reg_14 (FF)
+  Destination:       seg<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: sevenDisplay/r_reg_14 to seg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              13   0.591   1.158  sevenDisplay/r_reg_14 (sevenDisplay/r_reg_14)
+     LUT3:I0->O            1   0.704   0.000  sevenDisplay/Mmux_mux2_3 (sevenDisplay/Mmux_mux2_3)
+     MUXF5:I1->O           7   0.321   0.883  sevenDisplay/Mmux_mux2_2_f5 (sevenDisplay/mux2<0>)
+     LUT4:I0->O            1   0.704   0.420  sevenDisplay/Mrom_seg31 (seg_3_OBUF)
+     OBUF:I->O                 3.272          seg_3_OBUF (seg<3>)
+    ----------------------------------------
+    Total                      8.053ns (5.592ns logic, 2.461ns route)
+                                       (69.4% logic, 30.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 21.65 secs
+ 
+--> 
+
+Total memory usage is 228200 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

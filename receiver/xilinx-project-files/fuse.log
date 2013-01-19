@@ -1,0 +1,22 @@
+Running: C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o J:/Documents/320/Lab9/Lab9/rx_testbench_isim_beh.exe -prj J:/Documents/320/Lab9/Lab9/rx_testbench_beh.prj work.rx_testbench 
+ISim P.15xf (signature 0xc3576ebc)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "J:/Documents/320/Lab9/Lab9/rx.vhd" into library work
+Parsing VHDL file "J:/Documents/320/Lab9/Lab9/rx_testbench.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package textio
+Compiling package std_logic_textio
+Compiling architecture behavioral of entity rx [\rx(50000000,19200)\]
+Compiling architecture behavioral of entity rx_testbench
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable J:/Documents/320/Lab9/Lab9/rx_testbench_isim_beh.exe
+Fuse Memory Usage: 34992 KB
+Fuse CPU Usage: 1247 ms

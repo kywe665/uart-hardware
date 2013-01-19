@@ -1,0 +1,17 @@
+xst -intstyle ise -ifn "J:/Documents/320/Lab9/Lab9/topModule9.xst" -ofn "J:/Documents/320/Lab9/Lab9/topModule9.syr" 
+xst -intstyle ise -ifn "J:/Documents/320/Lab9/Lab9/topModule9.xst" -ofn "J:/Documents/320/Lab9/Lab9/topModule9.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab8.ucf -p xc3s500e-fg320-4 topModule9.ngc topModule9.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o topModule9_map.ncd topModule9.ngd topModule9.pcf 
+par -w -intstyle ise -ol high -t 1 topModule9_map.ncd topModule9.ncd topModule9.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml topModule9.twx topModule9.ncd -o topModule9.twr topModule9.pcf -ucf lab8.ucf 
+bitgen -intstyle ise -f topModule9.ut topModule9.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab8.ucf -p xc3s500e-fg320-4 topModule9.ngc topModule9.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o topModule9_map.ncd topModule9.ngd topModule9.pcf 
+xst -intstyle ise -ifn "J:/Documents/320/Lab9/Lab9/topModule9.xst" -ofn "J:/Documents/320/Lab9/Lab9/topModule9.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab8.ucf -p xc3s500e-fg320-4 topModule9.ngc topModule9.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o topModule9_map.ncd topModule9.ngd topModule9.pcf 
+par -w -intstyle ise -ol high -t 1 topModule9_map.ncd topModule9.ncd topModule9.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml topModule9.twx topModule9.ncd -o topModule9.twr topModule9.pcf -ucf lab8.ucf 
+bitgen -intstyle ise -f topModule9.ut topModule9.ncd 
+xst -intstyle ise -ifn "J:/Documents/320/Lab9/Lab9/topModule9.xst" -ofn "J:/Documents/320/Lab9/Lab9/topModule9.syr" 
+xst -intstyle ise -ifn "J:/Documents/320/Lab9/Lab9/topModule9.xst" -ofn "J:/Documents/320/Lab9/Lab9/topModule9.syr" 
